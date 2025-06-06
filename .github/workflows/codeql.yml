@@ -39,11 +39,11 @@ jobs:
         queries: ./custom-codeql-cpp
 
     - if: matrix.build-mode == 'manual'
-      name: Manual build
+      name: Minimal manual build
       shell: bash
       run: |
         make sandbox_defconfig
-        make HOSTCFLAGS="-DYYLTYPE_IS_DECLARED=1" -j$(nproc)
+        make include/config/auto.conf include/generated/autoconf.h
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
