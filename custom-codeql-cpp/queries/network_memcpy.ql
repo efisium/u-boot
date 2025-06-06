@@ -1,4 +1,11 @@
-/** @kind path-problem */
+/** 
+ * @id efisium/network-memcpy
+ * @kind path-problem
+ * @problem.severity warning
+ * @precision medium
+ * @tags security
+ */
+
 import cpp
 import semmle.code.cpp.dataflow.new.DataFlow
 
